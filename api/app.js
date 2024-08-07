@@ -1,5 +1,8 @@
 import express from 'express';
-
+import authRoute from "./routes/auth.route"
+import postRoute from "./routes/post.route"
 const app = express();
-console.log("first")
+
+app.use("/api/auth", authRoute);
+app.use("/api/posts", authRoute);
 app.listen(8800,() => {console.log("Server listening on")});
